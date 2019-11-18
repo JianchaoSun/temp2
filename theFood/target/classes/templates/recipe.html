@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head >
+        
+    </head>
+    <body>
+        
+        <h1 th:inline="text" >
+   [[${title}]]
+</h1>
+        
+        <img src= th:src="@{img}" >
+        
+        <h3>Vegetable</h3>
+        <th:block th:each="vege: ${Veges}">
+            <a th:href="@{/(id=${vege})}"> Vegetables [[${vege}]]</a> <br/>
+        </th:block>
+         
+         
+          <h3>Meat</h3>
+        <th:block th:each="meat: ${Meats}">
+            <a th:href="@{/(id=${meat})}"> Meat [[${meat}]]</a> <br/>
+        </th:block>
+        
+        <h4>Condiment</h4>
+        
+        <th:block th:each="cond: ${Conds}">
+            <a th:href="@{/(id=${cond})}"> Condiment: [[${cond}]]</a> <br/>
+        </th:block>
+        
+     <small th:text="${desc}" >Subtitle</small>
+     
+    </body>
+</html>
